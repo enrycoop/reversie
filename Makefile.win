@@ -1,0 +1,55 @@
+# Project: ReversiPro
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = aiuto.o carica_partita.o classifica.o impostazioni.o main.o nuova_partita.o campo_4x4.o campo_8x8.o carica_4x4.o carica_8x8.o
+LINKOBJ  = aiuto.o carica_partita.o classifica.o impostazioni.o main.o nuova_partita.o campo_4x4.o campo_8x8.o carica_4x4.o carica_8x8.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = ReversiPro.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+aiuto.o: aiuto.c
+	$(CC) -c aiuto.c -o aiuto.o $(CFLAGS)
+
+carica_partita.o: carica_partita.c
+	$(CC) -c carica_partita.c -o carica_partita.o $(CFLAGS)
+
+classifica.o: classifica.c
+	$(CC) -c classifica.c -o classifica.o $(CFLAGS)
+
+impostazioni.o: impostazioni.c
+	$(CC) -c impostazioni.c -o impostazioni.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+nuova_partita.o: nuova_partita.c
+	$(CC) -c nuova_partita.c -o nuova_partita.o $(CFLAGS)
+
+campo_4x4.o: campo_4x4.c
+	$(CC) -c campo_4x4.c -o campo_4x4.o $(CFLAGS)
+
+campo_8x8.o: campo_8x8.c
+	$(CC) -c campo_8x8.c -o campo_8x8.o $(CFLAGS)
+
+carica_4x4.o: carica_4x4.c
+	$(CC) -c carica_4x4.c -o carica_4x4.o $(CFLAGS)
+
+carica_8x8.o: carica_8x8.c
+	$(CC) -c carica_8x8.c -o carica_8x8.o $(CFLAGS)
